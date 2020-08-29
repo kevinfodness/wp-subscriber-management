@@ -84,13 +84,13 @@ class Usermeta {
 
         // Switch for new value.
         if ( true === $value ) {
-            add_user_meta(
+            return add_user_meta(
                 $user_id,
                 self::UNSUBSCRIBE_FIELD,
                 true
             );
         } else {
-            delete_user_meta(
+            return delete_user_meta(
                 $user_id,
                 self::UNSUBSCRIBE_FIELD
             );
