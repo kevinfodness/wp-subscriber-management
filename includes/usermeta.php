@@ -59,7 +59,7 @@ class Usermeta {
     public static function save_unsubscribe( int $user_id ) : bool {
         return self::set_unsubscribe(
             $user_id,
-            ! isset( $_POST['wp-subscriber-management-unsubscribe'] )
+            isset( $_POST['wp-subscriber-management-unsubscribe'] )
         );
     }
 
