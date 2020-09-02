@@ -19,9 +19,9 @@
 		<div>
 			<label for="wp-subscriber-management-post-types-<?php echo esc_attr( $post_type->name ); ?>">
 				<input id="wp-subscriber-management-post-types-<?php echo esc_attr( $post_type->name ); ?>"
-				       name="wp_subscriber_management_post_types[]"
-				       type="checkbox"
-				       value="<?php echo esc_attr( $post_type->name ); ?>"
+					name="wp_subscriber_management_post_types[]"
+					type="checkbox"
+					value="<?php echo esc_attr( $post_type->name ); ?>"
 					<?php checked( in_array( $post_type->name, $args['value'], true ) ); ?>
 				/>
 				<?php echo esc_html( $post_type->label ); ?>
@@ -31,9 +31,9 @@
 </fieldset>
 <p class="description">
 	<?php
-		esc_html_e(
-			'Select which post types should trigger emails to subscribers on publish.',
-			'wp-subscriber-management'
-		);
+	esc_html_e(
+		'Select which post types should trigger emails to subscribers on publish.',
+		'wp-subscriber-management'
+	);
 	?>
 </p>
