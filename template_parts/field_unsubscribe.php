@@ -5,12 +5,14 @@
  * Renders a checkbox to control whether the user has unsubscribed from email
  * notifications of new posts.
  *
- * @pacakge WP_Subscriber_Management
+ * @global array $args Arguments passed to the template part.
+ *
+ * @package WP_Subscriber_Management
  */
 
 ?>
 
-<h2><?php esc_html_e( 'Unsubscribe', 'wp_subscriber_management' ); ?></h2>
+<h2><?php esc_html_e( 'Unsubscribe', 'wp-subscriber-management' ); ?></h2>
 <table class="form-table" role="presentation">
     <tbody>
         <tr id="wp-subscriber-management" class="wp-subscriber-management-wrap">
@@ -26,7 +28,7 @@
             </th>
             <td>
                 <input
-                    <?php checked( true, $unsubscribed ); ?>
+                    <?php checked( true, $args['unsubscribed'] ); ?>
                         id="wp-subscriber-management-unsubscribe"
                         name="wp-subscriber-management-unsubscribe"
                         type="checkbox"

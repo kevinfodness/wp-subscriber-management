@@ -15,7 +15,10 @@
 namespace WP_Subscriber_Management;
 
 // Load files.
+require_once __DIR__ . '/includes/partials.php';
+require_once __DIR__ . '/includes/options.php';
 require_once __DIR__ . '/includes/usermeta.php';
 
 // Initialize functionality.
+Options::init();
 Usermeta::init();

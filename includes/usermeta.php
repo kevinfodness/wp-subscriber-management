@@ -26,12 +26,15 @@ class Usermeta {
      * @param \WP_User $user The user object for the user profile being edited.
      */
     public static function field_unsubscribe( \WP_User $user ) {
-        $unsubscribed = (bool) get_user_meta(
-            $user->ID,
-            self::UNSUBSCRIBE_FIELD,
-            true
-        );
-        require dirname( __DIR__ ) . '/template_parts/field_unsubscribe.php';
+    	$args = [
+		    'unsubscribed' => (bool) get_user_meta(
+			    $user->ID,
+			    self::UNSUBSCRIBE_FIELD,
+			    true
+		    ),
+	    ];
+
+        Partials::load( 'field_unsubscribe', $args );
     }
 
     /**
