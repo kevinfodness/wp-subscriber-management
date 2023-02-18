@@ -1,0 +1,25 @@
+{
+  "author": "Kevin Fodness (https://www.kevinfodness.com)",
+  "bugs": {
+    "url": "https://github.com/kevinfodness/wp-subscriber-management/issues"
+  },
+  "description": "Subscriber management for WordPress.",
+  "devDependencies": {
+    "@wordpress/scripts": "^25.4.0"
+  },
+  "homepage": "https://github.com/kevinfodness/wp-subscriber-management#readme",
+  "license": "GPL-2.0-or-later",
+  "main": "index.js",
+  "name": "wp-subscriber-management",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinfodness/wp-subscriber-management.git"
+  },
+  "scripts": {
+    "build": "wp-scripts build slotfills/skip-publish.js",
+    "packages-update": "wp-scripts packages-update",
+    "test": "wp-scripts test-unit-js"
+  },
+  "version": "1.1.0"
+}
