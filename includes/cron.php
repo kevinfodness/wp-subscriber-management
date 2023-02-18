@@ -88,12 +88,7 @@ class Cron {
 		);
 
 		// Whittle down the list of users to just their email addresses.
-		$emails = array_map(
-			function ( \WP_User $user ) {
-				return $user->user_email;
-			},
-			$users
-		);
+		$emails = wp_list_pluck( $users, 'user_email' );
 
 		// Get post content.
 		$post = get_post( $post_id );
@@ -126,16 +121,23 @@ class Cron {
 		// Compile the post content.
 		$post_content = apply_filters( 'the_content', $post->post_content );
 
+        // Get the featured image.
+        $featured_image_url = get_the_post_thumbnail_url( $post, 'large' );
+        $featured_image     = ! empty( $featured_image_url )
+            ? '<p><img alt="" src="' . esc_url( $featured_image_url ) . '" /></p>'
+            : '';
+
 		// Compile the email.
 		$message = <<<HTML
 <!doctype html>
-<html>
+<html lang="en">
 	<head>
 		<meta name="viewport" content="width=device-width" />
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<title>{$post_title}</title>
 	</head>
 	<body>
+	    {$featured_image}
 		<p>{$view_online}</p>
 		{$post_content}
 		<p>{$unsubscribe}</p>
