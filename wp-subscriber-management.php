@@ -18,9 +18,11 @@ namespace WP_Subscriber_Management;
 require_once __DIR__ . '/includes/cron.php';
 require_once __DIR__ . '/includes/options.php';
 require_once __DIR__ . '/includes/partials.php';
+require_once __DIR__ . '/includes/slotfills.php';
 require_once __DIR__ . '/includes/usermeta.php';
 
 // Initialize functionality.
 Cron::init();
 Options::init();
+Slotfills::init();
 Usermeta::init();

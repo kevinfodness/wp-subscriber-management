@@ -5,6 +5,11 @@
   },
   "description": "Subscriber management for WordPress.",
   "devDependencies": {
+    "@alleyinteractive/block-editor-tools": "^0.1.0",
+    "@wordpress/components": "^23.4.0",
+    "@wordpress/edit-post": "^7.4.0",
+    "@wordpress/i18n": "^4.27.0",
+    "@wordpress/plugins": "^5.4.0",
     "@wordpress/scripts": "^25.4.0"
   },
   "homepage": "https://github.com/kevinfodness/wp-subscriber-management#readme",
@@ -17,7 +22,7 @@
     "url": "git+https://github.com/kevinfodness/wp-subscriber-management.git"
   },
   "scripts": {
-    "build": "wp-scripts build slotfills/skip-publish.js",
+    "build": "wp-scripts build src/slotfills.tsx",
     "packages-update": "wp-scripts packages-update",
     "test": "wp-scripts test-unit-js"
   },

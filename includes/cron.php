@@ -67,6 +67,11 @@ class Cron {
 	 * @param int $post_id The ID of the post for which to send the email.
 	 */
 	public static function send_email( int $post_id ) {
+		// Determine if a notification should not be sent for a post.
+		if ( get_post_meta( $post_id, 'wp_subscriber_management_skip_push', true ) ) {
+			return;
+		}
+
 		// Ensure that the notification hasn't already been sent for the post.
 		if ( get_post_meta( $post_id, 'wp_subscriber_management_notification_sent', true ) ) {
 			return;
